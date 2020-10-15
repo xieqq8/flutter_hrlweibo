@@ -8,7 +8,7 @@ import 'package:flutter_hrlweibo/public.dart';
 void main() {
   runApp(new MyApp());
   if (Platform.isAndroid) {
-      SystemUiOverlayStyle systemUiOverlayStyle = SystemUiOverlayStyle(
+    SystemUiOverlayStyle systemUiOverlayStyle = SystemUiOverlayStyle(
       systemNavigationBarColor: Color(0xffffffff),
       systemNavigationBarIconBrightness: Brightness.dark,
       systemNavigationBarDividerColor: Color(0xffffffff),
@@ -16,11 +16,11 @@ void main() {
       statusBarIconBrightness: Brightness.light,
       statusBarBrightness: Brightness.light,
     );
-     SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
+    SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
   }
-
 }
 
+// StatelessWidget从始至终都不需要改变，也不可能会改变
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

@@ -1,7 +1,4 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'constants.dart';
-import 'regex_options.dart';
 
 enum ParsedType { EMAIL, PHONE, URL, CUSTOM }
 
