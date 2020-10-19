@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 
 //https://github.com/figengungor/page_view_indicators/blob/master/lib/circle_page_indicator.dart
 
@@ -44,7 +44,7 @@ class CirclePageIndicator extends StatefulWidget {
     Color selectedDotColor,
     this.selectedSize = _defaultSelectedSize,
   })  : this.dotColor = dotColor ??
-      ((selectedDotColor?.withAlpha(150)) ?? _defaultDotColor),
+            ((selectedDotColor?.withAlpha(150)) ?? _defaultDotColor),
         this.selectedDotColor = selectedDotColor ?? _defaultSelectedDotColor,
         super(key: key);
 

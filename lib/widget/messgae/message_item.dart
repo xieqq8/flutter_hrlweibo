@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 import 'package:flutter_hrlweibo/model/MessageNormal.dart';
 import 'package:flutter_hrlweibo/public.dart';
 import 'package:flutter_hrlweibo/widget/messgae/bubble.dart';
@@ -30,15 +30,19 @@ class ChatMessageItemState extends State<ChatMessageItem> {
   @override
   void initState() {
     super.initState();
-    mAudioAssetRightList.add(Constant.ASSETS_IMG + "audio_animation_list_right_1.png");
-    mAudioAssetRightList.add(Constant.ASSETS_IMG + "audio_animation_list_right_2.png");
-    mAudioAssetRightList.add(Constant.ASSETS_IMG + "audio_animation_list_right_3.png");
+    mAudioAssetRightList
+        .add(Constant.ASSETS_IMG + "audio_animation_list_right_1.png");
+    mAudioAssetRightList
+        .add(Constant.ASSETS_IMG + "audio_animation_list_right_2.png");
+    mAudioAssetRightList
+        .add(Constant.ASSETS_IMG + "audio_animation_list_right_3.png");
 
-     mAudioAssetLeftList.add(Constant.ASSETS_IMG + "audio_animation_list_left_1.png");
-    mAudioAssetLeftList.add(Constant.ASSETS_IMG + "audio_animation_list_left_2.png");
-    mAudioAssetLeftList.add(Constant.ASSETS_IMG + "audio_animation_list_right_3.png");
-
-
+    mAudioAssetLeftList
+        .add(Constant.ASSETS_IMG + "audio_animation_list_left_1.png");
+    mAudioAssetLeftList
+        .add(Constant.ASSETS_IMG + "audio_animation_list_left_2.png");
+    mAudioAssetLeftList
+        .add(Constant.ASSETS_IMG + "audio_animation_list_right_3.png");
   }
 
   @override
@@ -87,7 +91,7 @@ class ChatMessageItemState extends State<ChatMessageItem> {
         break;
       case HrlMessageType.voice:
         bool isStop = true;
-         if (mUUid == widget.mMessage.uuid) {
+        if (mUUid == widget.mMessage.uuid) {
           if (!mIsPlayint) {
             isStop = true;
           } else {
@@ -104,7 +108,7 @@ class ChatMessageItemState extends State<ChatMessageItem> {
             widget.onAudioTap((widget.mMessage as HrlVoiceMessage).path);
           },
           child: VoiceAnimationImage(
-            mMessage.isSend?mAudioAssetRightList:mAudioAssetLeftList,
+            mMessage.isSend ? mAudioAssetRightList : mAudioAssetLeftList,
             width: 100,
             height: 30,
             isStop: isStop,
@@ -190,13 +194,19 @@ class ChatMessageItemState extends State<ChatMessageItem> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Visibility(
-              visible: widget.mMessage.msgType==HrlMessageType.voice,
-              child:  Container(
-                child:  widget.mMessage.msgType==HrlMessageType.voice?Text((widget.mMessage as HrlVoiceMessage).duration.toString()+"'",style: TextStyle(fontSize: 14,color: Colors.black),):new Container(),
+              visible: widget.mMessage.msgType == HrlMessageType.voice,
+              child: Container(
+                child: widget.mMessage.msgType == HrlMessageType.voice
+                    ? Text(
+                        (widget.mMessage as HrlVoiceMessage)
+                                .duration
+                                .toString() +
+                            "'",
+                        style: TextStyle(fontSize: 14, color: Colors.black),
+                      )
+                    : new Container(),
               ),
             ),
-
-
             Container(
               constraints: BoxConstraints(
                 maxWidth: MediaQuery.of(context).size.width * 0.8,
@@ -238,14 +248,13 @@ class ChatMessageItemState extends State<ChatMessageItem> {
               ),
             ),
             Container(
-               constraints: BoxConstraints(
+              constraints: BoxConstraints(
                 maxWidth: MediaQuery.of(context).size.width * 0.8,
               ),
-              child:  Bubble(
-                  style: getItemBundleStyle(widget.mMessage),
-                  child: getItemContent(widget.mMessage),
-                ),
-
+              child: Bubble(
+                style: getItemBundleStyle(widget.mMessage),
+                child: getItemContent(widget.mMessage),
+              ),
               margin: EdgeInsets.only(
                 bottom: 5.0,
               ),
@@ -254,5 +263,3 @@ class ChatMessageItemState extends State<ChatMessageItem> {
         ));
   }
 }
-
-

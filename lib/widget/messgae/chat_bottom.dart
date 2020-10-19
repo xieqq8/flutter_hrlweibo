@@ -1,6 +1,6 @@
 import 'dart:ui' as ui;
 
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 import 'package:flutter_hrlweibo/public.dart';
 import 'package:keyboard_visibility/keyboard_visibility.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -113,7 +113,7 @@ class _ChatBottomInputWidgetState extends State<ChatBottomInputWidget>
     super.initState();
     streamSubscription =
         widget.shouldTriggerChange.listen((_) => hideBottomLayout());
-     WidgetsBinding.instance.addObserver(this);
+    WidgetsBinding.instance.addObserver(this);
     //   focusNode.addListener(onFocus);
 //    widget.controller.addListener(_onInputChange);
     mEditController.addListener(() {
@@ -460,7 +460,7 @@ class _ChatBottomInputWidgetState extends State<ChatBottomInputWidget>
       return Visibility(
         visible: mEmojiLayoutShow,
         child: EmojiWidget(onEmojiClockBack: (value) {
-           if (0 == value) {
+          if (0 == value) {
             mEditController.clear();
           } else {
             mEditController.text =

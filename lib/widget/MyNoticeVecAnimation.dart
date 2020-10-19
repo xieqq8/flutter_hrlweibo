@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 import 'package:flutter_hrlweibo/constant/constant.dart';
 
 //https://blog.csdn.net/qq_39099317/article/details/87858294
@@ -45,12 +45,11 @@ class _MyNoticeVecAnimationState extends State<MyNoticeVecAnimation>
           position: _positionAni1,
           child: FadeTransition(
             opacity: _opacityAni1,
-            child:
-            Row(
+            child: Row(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
                 Container(
-                  margin: EdgeInsets.only(right:5,top: 2),
+                  margin: EdgeInsets.only(right: 5, top: 2),
                   child: Image.asset(
                     Constant.ASSETS_IMG + 'find_top_search.png',
                     width: 12.0,
@@ -61,8 +60,7 @@ class _MyNoticeVecAnimationState extends State<MyNoticeVecAnimation>
                   widget.messages[_nextMassage],
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: TextStyle(
-                      fontSize: 14, color: Color(0xffee565656)),
+                  style: TextStyle(fontSize: 14, color: Color(0xffee565656)),
                 ),
               ],
             ),
@@ -79,11 +77,9 @@ class _MyNoticeVecAnimationState extends State<MyNoticeVecAnimation>
     );
   }
 
-
   //纵向滚动
   void _startVerticalAni() {
-    if(_controller!=null)
-      return;
+    if (_controller != null) return;
     // TODO: implement initState
     _controller = AnimationController(duration: widget.duration, vsync: this);
 
@@ -135,13 +131,8 @@ class _MyNoticeVecAnimationState extends State<MyNoticeVecAnimation>
   //释放
   @override
   void dispose() {
-
     _controller.dispose();
-    _controller=null;
-     super.dispose();
+    _controller = null;
+    super.dispose();
   }
-
-
-
-
 }

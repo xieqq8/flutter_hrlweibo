@@ -1,22 +1,16 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 import 'package:flutter_hrlweibo/public.dart';
 import 'extra_item.dart';
 
-
 typedef void OnImageSelect(File mImg);
 
-
 class DefaultExtraWidget extends StatefulWidget {
-
   final OnImageSelect onImageSelectBack;
 
   const DefaultExtraWidget({
     Key key,
     this.onImageSelectBack,
   }) : super(key: key);
-
-
-
 
   @override
   _DefaultExtraWidgetState createState() => _DefaultExtraWidgetState();
@@ -28,8 +22,8 @@ class _DefaultExtraWidgetState extends State<DefaultExtraWidget> {
     return Container(
       padding: EdgeInsets.only(top: 20),
       child: Row(
-         //mainAxisSize: MainAxisSize.min,
-         mainAxisAlignment: MainAxisAlignment.spaceAround,
+        //mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           new Flexible(
             child: createPicitem(),
@@ -47,7 +41,7 @@ class _DefaultExtraWidgetState extends State<DefaultExtraWidget> {
             child: createLocationitem(),
             flex: 1,
           ),
-         ],
+        ],
       ),
     );
   }
@@ -57,11 +51,10 @@ class _DefaultExtraWidgetState extends State<DefaultExtraWidget> {
         leadingHighLightIconPath: Constant.ASSETS_IMG + "ic_ctype_file_pre.png",
         text: "相册",
         onTab: () {
-          Future<File> imageFile = ImagePicker.pickImage(source: ImageSource.gallery);
+          Future<File> imageFile =
+              ImagePicker.pickImage(source: ImageSource.gallery);
           imageFile.then((result) {
-             widget.onImageSelectBack?.call(result);
-
-
+            widget.onImageSelectBack?.call(result);
           });
         },
       );

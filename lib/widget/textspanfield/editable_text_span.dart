@@ -1,5 +1,5 @@
 import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 import 'package:flutter/services.dart';
 
 import 'range_style.dart';
@@ -162,7 +162,10 @@ class _EditableTextSpan extends EditableTextState {
         continue;
       } else {
         // Consequent item, check if there is a gap between.
-        print("prev.range.end :"+prev.range.end.toString()+" item.range.start:"+ item.range.start.toString() );
+        print("prev.range.end :" +
+            prev.range.end.toString() +
+            " item.range.start:" +
+            item.range.start.toString());
         if (prev.range.end > item.range.start) {
           // Invalid ranges
           throw new StateError(

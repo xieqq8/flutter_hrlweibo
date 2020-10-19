@@ -1,6 +1,6 @@
 import 'dart:convert' as convert;
 
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 import 'package:flutter_hrlweibo/model/VideoModel.dart';
 import 'package:flutter_hrlweibo/model/WeiBoDetail.dart';
 import 'package:flutter_hrlweibo/pages/find/find_hot_search.dart';

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 import 'package:flutter/services.dart';
 import 'package:flutter_hrlweibo/pages/find_page.dart';
 import 'package:flutter_hrlweibo/pages/message_page.dart';
@@ -111,15 +111,16 @@ class _IndexPageState extends State<IndexPage> {
             children: tabBodies,
           ),
         ),
-          onWillPop: ()   {
+        onWillPop: () {
           // 点击返回键的操作
-          if (lastPopTime == null || DateTime.now().difference(lastPopTime) > Duration(seconds: 2)) {
+          if (lastPopTime == null ||
+              DateTime.now().difference(lastPopTime) > Duration(seconds: 2)) {
             lastPopTime = DateTime.now();
             ToastUtil.show('再按一次退出应用');
           } else {
             lastPopTime = DateTime.now();
             // 退出app
-              SystemChannels.platform.invokeMethod('SystemNavigator.pop');
+            SystemChannels.platform.invokeMethod('SystemNavigator.pop');
           }
         },
       ),

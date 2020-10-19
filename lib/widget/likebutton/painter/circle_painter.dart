@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 import 'package:flutter_hrlweibo/widget/likebutton/utils/like_button_model.dart';
 import 'package:flutter_hrlweibo/widget/likebutton/utils/like_button_util.dart';
 

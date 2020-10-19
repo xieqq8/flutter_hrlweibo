@@ -1,5 +1,5 @@
 import 'package:chewie/chewie.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 import 'package:flutter_hrlweibo/model/VideoModel.dart';
 import 'package:flutter_hrlweibo/public.dart';
 import 'package:video_player/video_player.dart';
@@ -24,7 +24,7 @@ class _VideoDetailPageState extends State<VideoDetailPage> {
 
   @override
   void initState() {
-     super.initState();
+    super.initState();
     mTabController = TabController(
       length: mTabList.length,
       vsync: ScrollableState(), //动画效果的异步处理

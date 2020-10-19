@@ -1,7 +1,7 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 import 'package:flutter_hrlweibo/model/WeiBoModel.dart';
 import 'package:flutter_hrlweibo/constant/constant.dart';
- import 'WeiBoItem.dart';
+import 'WeiBoItem.dart';
 
 class WeiBoDetailTopWidget extends StatefulWidget {
   final WeiBoModel mModel;
@@ -23,11 +23,10 @@ class _WeiBoDetailTopWidgetState extends State<WeiBoDetailTopWidget> {
 //整个item布局
 Widget _wholeItemWidget(BuildContext context, WeiBoModel weiboItem) {
   return Container(
-     color: Colors.white,
+    color: Colors.white,
     child: Column(
       children: <Widget>[
-
-        WeiBoItemWidget(weiboItem,true),
+        WeiBoItemWidget(weiboItem, true),
 
         _shareRow(context, weiboItem),
         new Container(
@@ -39,7 +38,6 @@ Widget _wholeItemWidget(BuildContext context, WeiBoModel weiboItem) {
     ),
   );
 }
-
 
 //分享布局
 Widget _shareRow(BuildContext context, WeiBoModel weiboItem) {
@@ -54,7 +52,7 @@ Widget _shareRow(BuildContext context, WeiBoModel weiboItem) {
         InkWell(
           onTap: () {},
           child: Container(
-               margin: EdgeInsets.only(left: 20),
+              margin: EdgeInsets.only(left: 20),
               child: Image.asset(
                 Constant.ASSETS_IMG + 'share_group_wx.png',
                 width: 30.0,

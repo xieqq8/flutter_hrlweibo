@@ -1,6 +1,6 @@
 import 'package:extended_text_library/extended_text_library.dart';
 import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 
 class AtText extends SpecialText {
   static const String flag = '[@';
@@ -19,19 +19,17 @@ class AtText extends SpecialText {
         this.textStyle?.copyWith(color: Colors.blue, fontSize: 16.0);
 
     final atText = toString();
-    Pattern  pattern= r"\[(@[^:]+):([^\]]+)\]";
+    Pattern pattern = r"\[(@[^:]+):([^\]]+)\]";
 
     Map<String, String> map = Map<String, String>();
     RegExp customRegExp = RegExp(pattern);
     Match match = customRegExp.firstMatch(atText);
 
-
-
     return showAtBackground
         ? BackgroundTextSpan(
             background: Paint()..color = Colors.blue.withOpacity(0.15),
-            text:  match.group(1),
-            actualText:atText,
+            text: match.group(1),
+            actualText: atText,
             start: start,
 
             ///caret can move into special text
@@ -42,8 +40,8 @@ class AtText extends SpecialText {
                 if (onTap != null) onTap(atText);
               }))
         : SpecialTextSpan(
-        text:   match.group(1),
-        actualText:atText,
+            text: match.group(1),
+            actualText: atText,
             start: start,
             style: textStyle,
             recognizer: (TapGestureRecognizer()
@@ -52,4 +50,3 @@ class AtText extends SpecialText {
               }));
   }
 }
-

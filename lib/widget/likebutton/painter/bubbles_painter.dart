@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 import 'dart:math' as math;
 
 import 'package:flutter_hrlweibo/widget/likebutton/utils/like_button_util.dart';

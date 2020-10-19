@@ -1,6 +1,6 @@
 import 'package:azlistview/azlistview.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 import 'package:flutter_hrlweibo/model/WeiboAtUser.dart';
 import 'package:flutter_hrlweibo/public.dart';
 import 'package:lpinyin/lpinyin.dart';

@@ -1,18 +1,17 @@
 // 帧动画Image
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 
 class VoiceAnimationImage extends StatefulWidget {
   final List<String> _assetList;
   final double width;
   final double height;
   int interval = 200;
-  bool isStop= false;
+  bool isStop = false;
   var callStart;
   VoiceAnimationImageState voiceAnimationImageState;
 
-
   VoiceAnimationImage(this._assetList,
-      {this.width, this.height, this.isStop,this.interval});
+      {this.width, this.height, this.isStop, this.interval});
 
   @override
   State<StatefulWidget> createState() {
@@ -20,16 +19,13 @@ class VoiceAnimationImage extends StatefulWidget {
     return voiceAnimationImageState;
   }
 
-
-  start(){
+  start() {
     voiceAnimationImageState.start();
   }
 
-  stop(){
+  stop() {
     voiceAnimationImageState.stop();
   }
-
-
 }
 
 class VoiceAnimationImageState extends State<VoiceAnimationImage>
@@ -60,10 +56,9 @@ class VoiceAnimationImageState extends State<VoiceAnimationImage>
 
     _animation = new Tween<double>(begin: 0, end: imageCount.toDouble())
         .animate(_controller)
-      ..addListener(() {
-        setState(() {
-        });
-      });
+          ..addListener(() {
+            setState(() {});
+          });
   }
 
   @override
@@ -82,10 +77,9 @@ class VoiceAnimationImageState extends State<VoiceAnimationImage>
 
   @override
   Widget build(BuildContext context) {
-
-    if(widget.isStop){
+    if (widget.isStop) {
       start();
-    }else{
+    } else {
       stop();
     }
     int ix = _animation.value.floor() % widget._assetList.length;
@@ -105,6 +99,6 @@ class VoiceAnimationImageState extends State<VoiceAnimationImage>
       width: widget.width,
       height: widget.height,
     ));
-    return  Stack(alignment: AlignmentDirectional.center, children: images);
+    return Stack(alignment: AlignmentDirectional.center, children: images);
   }
 }

@@ -1,6 +1,4 @@
-
-import 'package:flutter/material.dart';
-
+import 'package:flutter/material.dart' hide Router;
 
 class VoiceAnimationImage extends StatefulWidget {
   final List<String> _assetList;
@@ -57,9 +55,9 @@ class VoiceAnimationImageState extends State<VoiceAnimationImage>
 
     _animation = new Tween<double>(begin: 0, end: imageCount.toDouble())
         .animate(_controller)
-      ..addListener(() {
-        setState(() {});
-      });
+          ..addListener(() {
+            setState(() {});
+          });
   }
 
   @override
@@ -119,7 +117,7 @@ class VoiceAnimationImageState extends State<VoiceAnimationImage>
     }
 
     return Container(
-     // color: Colors.red,
+      // color: Colors.red,
       width: 80,
       height: 20,
       alignment: Alignment.centerRight,

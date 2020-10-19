@@ -1,7 +1,7 @@
 import 'dart:convert' as convert;
 
 import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 import 'package:flutter_hrlweibo/model/WeiBoCommentList.dart';
 import 'package:flutter_hrlweibo/model/WeiBoDetail.dart';
 import 'package:flutter_hrlweibo/pages/home/weibo_comment_page.dart';

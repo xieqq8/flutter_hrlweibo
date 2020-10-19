@@ -1,5 +1,5 @@
 import 'package:extended_text_library/extended_text_library.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 import 'package:flutter_hrlweibo/widget/messgae/emoji_widget.dart';
 
 import 'at_text.dart';
@@ -9,7 +9,7 @@ import 'emoji_text.dart';
 class MySpecialTextSpanBuilder extends SpecialTextSpanBuilder {
   /// whether show background for @somebody
   final bool showAtBackground;
-  MySpecialTextSpanBuilder({this.showAtBackground= false});
+  MySpecialTextSpanBuilder({this.showAtBackground = false});
 
   @override
   TextSpan build(String data, {TextStyle textStyle, onTap}) {
@@ -30,23 +30,22 @@ class MySpecialTextSpanBuilder extends SpecialTextSpanBuilder {
         start: index - (AtText.flag.length - 1),
         showAtBackground: showAtBackground,
       );
-    } else if(isStart(flag, TopicText.flag)){
+    } else if (isStart(flag, TopicText.flag)) {
       return TopicText(
         textStyle,
         onTap,
         start: index - (TopicText.flag.length - 1),
         showAtBackground: showAtBackground,
       );
-
-    } else if(isStart(flag, EmojiText.flag)){
+    } else if (isStart(flag, EmojiText.flag)) {
       return EmojiText(
         textStyle,
         onTap,
         start: index - (EmojiText.flag.length - 1),
         showAtBackground: showAtBackground,
       );
-
-    }/*else if (isStart(flag, EmojiText.flag)) {
+    }
+    /*else if (isStart(flag, EmojiText.flag)) {
       return EmojiText(textStyle, start: index - (EmojiText.flag.length - 1));
     } else if (isStart(flag, DollarText.flag)) {
       return DollarText(textStyle, onTap,

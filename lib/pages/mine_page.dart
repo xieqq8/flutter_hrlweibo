@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_hrlweibo/public.dart';
 
@@ -26,12 +26,12 @@ class _MinePageState extends State<MinePage> {
   }
 
   //TODO
-   @override
+  @override
   void deactivate() {
     super.deactivate();
-     var isTopRoute = ModalRoute.of(context).isCurrent;
+    var isTopRoute = ModalRoute.of(context).isCurrent;
     if (isTopRoute) {
-       if (UserUtil.isLogin()) {
+      if (UserUtil.isLogin()) {
         FormData params = FormData.fromMap({
           'muserId': UserUtil.getUserInfo().id,
           'otheruserId': UserUtil.getUserInfo().id,

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 
 import 'message/message_dynamic_page.dart';
 import 'message/message_msg_page.dart';

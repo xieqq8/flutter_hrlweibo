@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 import 'package:flutter/widgets.dart';
 import 'package:flutter_hrlweibo/constant/constant.dart';
 import 'package:flutter_hrlweibo/routers/routers.dart';

@@ -1,6 +1,6 @@
 import 'package:extended_text_library/extended_text_library.dart';
 import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 
 class TopicText extends SpecialText {
   static const String flag = '#';
@@ -20,11 +20,10 @@ class TopicText extends SpecialText {
 
     final str = toString();
 
-    String idStr =str.substring(str.indexOf(":")+1,
-        str.lastIndexOf("#"));
-    String showStr =str.substring(str.indexOf("#"),
-        str.lastIndexOf("#")+1).replaceAll(":"+idStr, "");
-
+    String idStr = str.substring(str.indexOf(":") + 1, str.lastIndexOf("#"));
+    String showStr = str
+        .substring(str.indexOf("#"), str.lastIndexOf("#") + 1)
+        .replaceAll(":" + idStr, "");
 
     return showAtBackground
         ? BackgroundTextSpan(
@@ -51,4 +50,3 @@ class TopicText extends SpecialText {
               }));
   }
 }
-

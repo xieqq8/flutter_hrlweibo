@@ -1,5 +1,5 @@
 import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 import 'match_text.dart';
 
 /// Parse text and make them into multiple Flutter Text widgets

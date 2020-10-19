@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 import 'package:flutter_hrlweibo/constant/constant.dart';
 
 typedef void ITextFieldCallBack(String content);
@@ -33,41 +33,40 @@ class _PwdEditTextState extends State<PwdEditText> {
     return new Container(
       child: new TextField(
         controller: _controller,
-        style: TextStyle(color: Color(0xff333333),fontSize: 14),
+        style: TextStyle(color: Color(0xff333333), fontSize: 14),
         decoration: InputDecoration(
           counterText: "",
           hintText: "请输入密码",
-          contentPadding: EdgeInsets.only(left: 0,top: 14 ,bottom: 14),
-          hintStyle: TextStyle(color: Color(0xff8C8C8C),fontSize: 14),
+          contentPadding: EdgeInsets.only(left: 0, top: 14, bottom: 14),
+          hintStyle: TextStyle(color: Color(0xff8C8C8C), fontSize: 14),
           focusedBorder: UnderlineInputBorder(
-              borderSide:  BorderSide(color: Colors.orange)),
+              borderSide: BorderSide(color: Colors.orange)),
           enabledBorder: UnderlineInputBorder(
               borderSide: BorderSide(color: Color(0xffDADADA))),
           fillColor: Colors.transparent,
           filled: true,
-           suffixIcon: _isShowDelete
+          suffixIcon: _isShowDelete
               ? new Container(
-            width:14.0,
-            height: 14.0,
-            child: new IconButton(
-              padding: const EdgeInsets.all(0.0),
-              iconSize: 14.0,
-              icon: Image.asset(
-                Constant.ASSETS_IMG + 'icon_et_delete.png',
-                width: 14.0,
-                height: 14.0,
-              ),
-              onPressed: () {
-                setState(() {
-                  _inputAccount = "";
-                  _isShowDelete = (_inputAccount.isNotEmpty);
-                  widget.contentStrCallBack(_inputAccount);
-                });
-              },
-            ),
-          )
+                  width: 14.0,
+                  height: 14.0,
+                  child: new IconButton(
+                    padding: const EdgeInsets.all(0.0),
+                    iconSize: 14.0,
+                    icon: Image.asset(
+                      Constant.ASSETS_IMG + 'icon_et_delete.png',
+                      width: 14.0,
+                      height: 14.0,
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        _inputAccount = "";
+                        _isShowDelete = (_inputAccount.isNotEmpty);
+                        widget.contentStrCallBack(_inputAccount);
+                      });
+                    },
+                  ),
+                )
               : Text(''),
-
         ),
         onChanged: (str) {
           setState(() {

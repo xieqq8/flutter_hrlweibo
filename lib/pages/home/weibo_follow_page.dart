@@ -1,6 +1,5 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 import 'weibo_homelist_page.dart';
-
 
 class WeiBoFollowPage extends StatefulWidget {
   @override
@@ -10,6 +9,6 @@ class WeiBoFollowPage extends StatefulWidget {
 class _WeiBoFollowPageState extends State<WeiBoFollowPage> {
   @override
   Widget build(BuildContext context) {
-    return   new WeiBoHomeListPager(mCatId: "0");
+    return new WeiBoHomeListPager(mCatId: "0");
   }
 }

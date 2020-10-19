@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 
- class LoadingContainer extends StatelessWidget {
+class LoadingContainer extends StatelessWidget {
   final Widget child;
   final bool isLoading;
   final bool cover;

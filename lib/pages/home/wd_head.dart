@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 import 'package:flutter_hrlweibo/constant/constant.dart';
 
 //微博详情头部标题布局
@@ -31,7 +31,6 @@ class _WdHeadWidgetState extends State<WdHeadWidget> {
       _highlight = false;
     });
   }
-
 
   @override
   Widget build(BuildContext context) {

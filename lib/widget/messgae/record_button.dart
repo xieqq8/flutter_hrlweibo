@@ -3,7 +3,7 @@ import 'dart:io' as io;
 
 import 'package:file/file.dart';
 import 'package:file/local.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 import 'package:flutter_hrlweibo/constant/constant.dart';
 import 'package:flutter_record_plugin/flutter_record_plugin.dart';
 import 'package:path_provider/path_provider.dart';

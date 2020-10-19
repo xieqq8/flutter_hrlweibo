@@ -1,6 +1,6 @@
 import 'package:extended_text_library/extended_text_library.dart';
 import 'package:flutter/gestures.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide Router;
 
 class EmojiText extends SpecialText {
   static const String flag = '[/';
@@ -19,19 +19,17 @@ class EmojiText extends SpecialText {
         this.textStyle?.copyWith(color: Colors.blue, fontSize: 16.0);
 
     final str = toString();
-    int mEmojiNew=0;
+    int mEmojiNew = 0;
     try {
-       String mEmoji=str.replaceAll(RegExp('(\\[)|(\\/)|(\\])'), "");
-       mEmojiNew= int.parse(mEmoji);
-     } on Exception catch (_) {
-     }
-
+      String mEmoji = str.replaceAll(RegExp('(\\[)|(\\/)|(\\])'), "");
+      mEmojiNew = int.parse(mEmoji);
+    } on Exception catch (_) {}
 
     return showAtBackground
         ? BackgroundTextSpan(
             background: Paint()..color = Colors.blue.withOpacity(0.15),
-            text:    String.fromCharCode(mEmojiNew),
-            actualText:str,
+            text: String.fromCharCode(mEmojiNew),
+            actualText: str,
             start: start,
 
             ///caret can move into special text
@@ -42,8 +40,8 @@ class EmojiText extends SpecialText {
                 if (onTap != null) onTap(str);
               }))
         : SpecialTextSpan(
-        text:  String.fromCharCode(mEmojiNew),
-        actualText:str,
+            text: String.fromCharCode(mEmojiNew),
+            actualText: str,
             start: start,
             style: textStyle,
             recognizer: (TapGestureRecognizer()
@@ -52,4 +50,3 @@ class EmojiText extends SpecialText {
               }));
   }
 }
-
